@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JSON</h2>
+    <p>JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax.</p>
+    <ol>
+        <li>parse(): Accepts a JSON string as a parameter, and returns the corresponding JavaScript object.</li>
+        <li>stringify(): Accepts an object as a parameter, and returns the equivalent JSON string.</li>
+    </ol>
+    <script>
+        var Marks1 = 90
+        var Marks2 = 90
+        var Marks3 = 90
+        var Marks4 = 90
+        let Marks = [90,90,90,90]
+        // let MarksSub =" {'Marks1':90,'Marks2':90,'Marks3':90,'Marks4':90}"
+        // console.log(MarksSub );
+        // console.log(MarksSub.Marks1 );
+        // console.log(MarksSub[Marks1] );
+        // console.log(MarksSub['Marks1'] );
+        let MarksSub = {"Marks1":90,"Marks2":90,"Marks3":90,"Marks4":90}
+        console.log(MarksSub );
+        console.log(MarksSub.Marks1 );
+        Marks1 = "Marks1"
+        console.log(MarksSub[Marks1] );
+        console.log(MarksSub['Marks1'] );
+</script>
+</body>
+</html>

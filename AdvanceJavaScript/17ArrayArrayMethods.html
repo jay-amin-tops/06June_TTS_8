@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Array </h2>
+    <p>The Array object, as with arrays in other programming languages, enables storing a collection of multiple items
+        under a single variable name, and has members for performing common array operations.</p>
+    <ul>
+        <li><strong>JavaScript arrays are resizable</strong> and <strong>can contain a mix of different <a
+                    href="/en-US/docs/Web/JavaScript/Data_structures">data types</a></strong>. (When those
+            characteristics are undesirable, use <a href="/en-US/docs/Web/JavaScript/Guide/Typed_arrays">typed
+                arrays</a> instead.)</li>
+        <li><strong>JavaScript arrays are not associative arrays</strong> and so, array elements cannot be accessed
+            using arbitrary strings as indexes, but must be accessed using nonnegative integers (or their respective
+            string form) as indexes.</li>
+        <li><strong>JavaScript arrays are <a href="https://en.wikipedia.org/wiki/Zero-based_numbering" class="external"
+                    target="_blank">zero-indexed</a></strong>: the first element of an array is at index <code>0</code>,
+            the second is at index <code>1</code>, and so on — and the last element is at the value of the array's <a
+                href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length"><code>length</code></a> property
+            minus <code>1</code>.</li>
+        <li><strong>JavaScript <a href="#copy_an_array">array-copy operations</a> create <a
+                    href="/en-US/docs/Glossary/Shallow_copy">shallow copies</a></strong>. (All standard built-in copy
+            operations with <em>any</em> JavaScript objects create shallow copies, rather than <a
+                href="/en-US/docs/Glossary/Deep_copy">deep copies</a>).</li>
+    </ul>
+    <p>A cheat sheet of array methods:</p>
+    <ul>
+        <li>
+            <p>To add/remove elements:</p>
+            <ul>
+                <li><code>push(...items)</code> – adds items to the end,</li>
+                <li><code>pop()</code> – extracts an item from the end,</li>
+                <li><code>shift()</code> – extracts an item from the beginning,</li>
+                <li><code>unshift(...items)</code> – adds items to the beginning.</li>
+                <li><code>splice(pos, deleteCount, ...items)</code> – at index <code>pos</code> deletes
+                    <code>deleteCount</code> elements and inserts <code>items</code>.
+                </li>
+                <li><code>slice(start, end)</code> – creates a new array, copies elements from index <code>start</code>
+                    till <code>end</code> (not inclusive) into it.</li>
+                <li><code>concat(...items)</code> – returns a new array: copies all members of the current one and adds
+                    <code>items</code> to it. If any of <code>items</code> is an array, then its elements are taken.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>To search among elements:</p>
+            <ul>
+                <li><code>indexOf/lastIndexOf(item, pos)</code> – look for <code>item</code> starting from position
+                    <code>pos</code>, return the index or <code>-1</code> if not found.
+                </li>
+                <li><code>includes(value)</code> – returns <code>true</code> if the array has <code>value</code>,
+                    otherwise <code>false</code>.</li>
+                <li><code>find/filter(func)</code> – filter elements through the function, return first/all values that
+                    make it return <code>true</code>.</li>
+                <li><code>findIndex</code> is like <code>find</code>, but returns the index instead of a value.</li>
+            </ul>
+        </li>
+        <li>
+            <p>To iterate over elements:</p>
+            <ul>
+                <li><code>forEach(func)</code> – calls <code>func</code> for every element, does not return anything.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>To transform the array:</p>
+            <ul>
+                <li><code>map(func)</code> – creates a new array from results of calling <code>func</code> for every
+                    element.</li>
+                <li><code>sort(func)</code> – sorts the array in-place, then returns it.</li>
+                <li><code>reverse()</code> – reverses the array in-place, then returns it.</li>
+                <li><code>split/join</code> – convert a string to array and back.</li>
+                <li><code>reduce/reduceRight(func, initial)</code> – calculate a single value over the array by calling
+                    <code>func</code> for each element and passing an intermediate result between the calls.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Additionally:</p>
+            <ul>
+                <li><code>Array.isArray(value)</code> checks <code>value</code> for being an array, if so returns
+                    <code>true</code>, otherwise <code>false</code>.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        let arr = [50, 90, 80, "true", true, 1, 12.45, 'A']
+        console.log(typeof arr);
+        console.log(typeof arr[3]);
+        console.log(typeof arr[4]);
+        console.log(typeof arr[5]);
+        for (let index = 0; index < arr.length; index++) {
+            console.log(arr[index]);
+        }
+        let ListData = ''
+        arr.forEach(anything => {
+            console.log("foreach element :", anything);
+            ListData += `<li>${anything}</li>`
+        });
+        console.log(ListData);
+        for (const key in arr) {
+
+            console.log("for in key", key);
+        }
+        for (const iterator of arr) {
+            console.log("for of data : ", iterator);
+
+        }
+
+        // map() will be return some value  
+        let listItem = arr.map((data) => {
+            // console.log("map function data:",data);
+            return `<li>${data}<li>`
+        })
+        console.log(listItem);
+
+        const fruits = [];
+        fruits.push("banana", "apple", "peach");
+        console.log(fruits.length); // 3
+
+
+        const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+        console.log(plants.pop());.
+
+
+
+        const months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb');
+        // Inserts at index 1
+        console.log(months);
+        // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+        months.splice(4, 1, 'May');
+        // Replaces 1 element at index 4
+        console.log(months);
+
+
+        const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+        console.log(animals.slice(2));
+        // Expected output: Array ["camel", "duck", "elephant"]
+
+        console.log(animals.slice(2, 4));
+        // Expected output: Array ["camel", "duck"]
+
+        console.log(animals.slice(1, 5));
+        // Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+        console.log(animals.slice(-2));
+        // Expected output: Array ["duck", "elephant"]
+
+        console.log(animals.slice(2, -1));
+        // Expected output: Array ["camel", "duck"]
+
+        console.log(animals.slice());
+// Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+    </script>
+</body>
+
+</html>

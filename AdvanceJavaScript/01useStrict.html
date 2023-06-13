@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>use strict</h3>
+    <p>The modern mode, "use strict"</p>
+    <p>The directive looks like a string: "use strict" or 'use strict'. When it is located at the top of a script, the whole script works the “modern” way.</p>
+<script>
+    // alert ("called")
+    "use strict";
+    // username = "Test" //Uncaught ReferenceError: username is not defined
+    let username = "Test" //Uncaught ReferenceError: username is not defined
+    console.log(username);
+</script>
+</body>
+</html>

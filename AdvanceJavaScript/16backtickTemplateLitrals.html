@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="disp"></div>
+    
+    <p>Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, string interpolation with embedded expressions, and special constructs called <b>tagged templates.</b> </p>
+
+    <p> Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.</p>
+    <script>
+        var name = "<b>User name</b>"
+    //     var HtmlTableData = "    <table>
+    //     <tr>
+    //         <td>Data</td>
+    //     </tr>
+    // </table>"
+    //     var HtmlTableData = '   <table>
+    //     <tr>
+    //         <td>Data</td>
+    //     </tr>
+    // </table>'
+        // var HtmlTableData = '<table> <tr> <td>Data</td> </tr> </table>'
+        
+        // var HtmlTableData = "<table> <tr> <td>"+ name +"</td> </tr> </table>"
+        var HtmlTableData = `<table> 
+            <tr> 
+                <td>${name}</td> 
+            </tr> 
+        </table>`
+        // document.getElementById("disp").innerText = "name"
+        // document.getElementById("disp").innerText = name
+        document.getElementById("disp").innerHTML = HtmlTableData
+                    
+    </script>
+</body>
+</html>

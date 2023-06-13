@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        The object-to-primitive conversion is called automatically by many built-in functions and operators that expect a primitive as a value.
+
+        There are 3 types (hints) of it:
+
+        "string" (for alert and other operations that need a string)
+        "number" (for maths)
+        "default" (few operators, usually objects implement it the same way as "number")
+        The specification describes explicitly which operator uses which hint.
+
+        The conversion algorithm is:
+
+        Call obj[Symbol.toPrimitive](hint) if the method exists,
+        Otherwise if hint is "string"
+        try calling obj.toString() or obj.valueOf(), whatever exists.
+        Otherwise if hint is "number" or "default"
+        try calling obj.valueOf() or obj.toString(), whatever exists.
+        All these methods must return a primitive to work (if defined).
+    </pre>
+    <script>
+        // explicit conversion
+        let obj = "aaS"
+        console.log(obj);
+        console.log(typeof obj);
+        // console.log(obj.__proto__);
+        // console.log(obj.toUpperCase());
+        let num = Number("1");
+        console.log(typeof num);
+        console.log(num.__proto__);
+        console.log(num.toString());
+        console.log(typeof num.toString());
+        // maths (except binary plus)
+        // let n = +obj; // unary plus
+        // let delta = date1 - date2;
+
+    </script>
+</body>
+
+</html>

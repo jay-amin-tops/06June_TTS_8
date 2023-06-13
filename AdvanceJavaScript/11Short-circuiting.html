@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <PRE>The optional chaining ?. syntax has three forms:
+
+        obj?.prop – returns obj.prop if obj exists, otherwise undefined.
+        obj?.[prop] – returns obj[prop] if obj exists, otherwise undefined.
+        obj.method?.() – calls obj.method() if obj.method exists, otherwise returns undefined.
+        As we can see, all of them are straightforward and simple to use. The ?. checks the left part for null/undefined and allows the evaluation to proceed if it’s not so.
+        
+        A chain of ?. allows to safely access nested properties.
+        
+        Still, we should apply ?. carefully, only where it’s acceptable, according to our code logic, that the left part doesn’t exist. So that it won’t hide programming errors from us, if they occur.</PRE>
+    <script>
+        let user = null;
+        console.log(user?.address); //ReferenceError: Cannot access 'user' before initialization
+
+        // console.log(user?.address); // undefined
+        // console.log(user?.address.street); // undefined
+        // let user = null;
+        let x = 0;
+
+        // user.sayHi(x++); // no "user", so the execution doesn't reach sayHi call and x++
+        user?.sayHi(x++); // no "user", so the execution doesn't reach sayHi call and x++
+
+        // alert(x); // 0, value not incremented
+
+        let id1 = Symbol("id");
+        let id2 = Symbol("id");
+        // let id1 = "id";
+        // let id2 = "id";
+        console.log(id1);
+        console.log(id2);
+        alert(id1 == id2); // false
+        // alert(id.toString()); // Symbol(id), now it works
+
+
+    </script>
+</body>
+
+</html>

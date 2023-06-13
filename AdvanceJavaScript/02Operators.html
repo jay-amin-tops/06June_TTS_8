@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Sometimes, we need to perform different actions based on different conditions.</p>
+    <p>To do that, we can use the if statement and the conditional operator ?, that’s also called a “question mark”
+        operator.</p>
+
+
+    <script>
+        // if (5>9) {
+        //     console.log("5 is bigger than 9");
+        // } else {
+        //     console.log("5 is smaller than 9");
+        // }
+        //  (Condition) ? "True Block Code" : "false Block Code";
+        Response = (5 > 9) ? "5 is bigger than 9" : "5 is smaller than 9";
+        console.log(Response);
+        // let a = null
+        b = "data of b"
+
+        if(a !== null && a !== undefined){
+            console.log("data of a");
+        }else{
+            console.log("data of b");
+        }
+
+        result = (a !== null && a !== undefined) ? a : b;
+        console.log(result);
+        var a = null
+
+        let user;
+        user = "data"
+        alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+    </script>
+</body>
+
+</html>
