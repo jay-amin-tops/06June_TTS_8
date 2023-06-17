@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // console.log(username);
+        // username = "TOPS" //username is not defined
+        // let username = "TOPS" // Uncaught ReferenceError: Cannot access 'username' before initialization
+        // const username = "TOPS" // Uncaught ReferenceError: Cannot access 'username' before initialization
+        var aoutvar = "Out var" // supports the hoisting concepts
+        let aoutsomething_let ="Out let"
+        const aoutsomething_const ="Out const"
+        test = "something"
+        // console.log(test);
+        
+        function abcd() {
+            var asomething ="var"
+            let asomething_let ="let"
+            const asomething_const ="const"
+            console.log(aoutvar);
+            console.log(aoutsomething_let);
+            console.log(aoutsomething_const);
+            console.log(asomething_const);
+            console.log(asomething_let);
+            console.log(asomething);
+        }
+
+        abcd()
+
+    </script>
+
+</body>
+
+</html>

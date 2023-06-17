@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Map</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/Map"><code>new Map()</code></a>
+            – creates the map.</li>
+        <li><a  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set"><code>map.set(key, value)</code></a>
+            – stores the value by the key.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get"><code>map.get(key)</code></a>
+            – returns the value by the key, <code>undefined</code> if <code>key</code> doesn’t exist in map.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has"><code>map.has(key)</code></a>
+            – returns <code>true</code> if the <code>key</code> exists, <code>false</code> otherwise.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete"><code>map.delete(key)</code></a>
+            – removes the element (the key/value pair) by the key.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear"><code>map.clear()</code></a>
+            – removes everything from the map.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size"><code>map.size</code></a>
+            – returns the current element count.</li>
+    </ul>
+    <h2>Set</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set"><code>new Set([iterable])</code></a> – creates the set, and if an <code>iterable</code> object is provided (usually an array), copies values from it into the set.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add"><code>set.add(value)</code></a> – adds a value, returns the set itself.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete"><code>set.delete(value)</code></a> – removes the value, returns <code>true</code> if <code>value</code> existed at the moment of the call, otherwise <code>false</code>.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has"><code>set.has(value)</code></a> – returns <code>true</code> if the value exists in the set, otherwise <code>false</code>.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear"><code>set.clear()</code></a> – removes everything from the set.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size"><code>set.size</code></a> – is the elements count.</li>
+        </ul>
+    <script>
+        let map = new Map();
+
+        map.set('1', 'str1');   // a string key
+        map.set(1, 'num1');     // a numeric key
+        map.set(true, 'bool1'); // a boolean key
+
+        // remember the regular Object? it would convert keys to string
+        // Map keeps the type, so these two are different:
+        console.log(map.get(1)); // 'num1'
+        console.log(map.get('1')); // 'str1'
+
+        console.log(map.size); // 3
+
+        let recipeMap = new Map([
+            ['cucumber', 500],
+            ['tomatoes', 350],
+            ['onion', 50]
+        ]);
+
+        console.log(recipeMap.keys());
+        console.log(recipeMap.values());
+        // iterate over keys (vegetables)
+        for (let vegetable of recipeMap.keys()) {
+            console.log(vegetable); // cucumber, tomatoes, onion
+        }
+    </script>
+</body>
+
+</html>

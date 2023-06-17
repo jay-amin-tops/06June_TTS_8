@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = ["I", "go", "home"];
+        // console.log(arr);
+        // delete arr[1]; // remove "go"
+        // console.log(arr);
+
+        // console.log( arr.length ); // 3
+        // // arr.push(...items)
+        // arr.push("test")
+        // console.log(arr);
+        // arr.splice(1, 1); 
+        // console.log(arr);
+        // let arr = ["I", "study", "JavaScript", "right", "now"];
+
+        // // remove 3 first elements and replace them with another
+        // console.log(arr);
+        // arr.splice(0, 3, "Let's", "dance");
+
+        // console.log(arr) // now ["Let's", "dance", "right", "now"]
+
+        // let arr = ["t", "e", "s", "t"];
+
+        // // console.log( arr.slice(0, 3) ); // e,s (copy from 1 to 3)
+
+        // console.log(arr.slice(-3) ); // s,t (copy from -2 till the end)
+
+        // let arr = [1, 2];
+
+        // // create an array from: arr and [3,4]
+        // console.log(arr.concat([3, 4])); // 1,2,3,4
+
+        // // create an array from: arr and [3,4] and [5,6]
+        // console.log(arr.concat([3, 4], [5, 6])); // 1,2,3,4,5,6
+
+        // // create an array from: arr and [3,4], then add values 5 and 6
+        // console.log(arr.concat([3, 4], 5, 6)); // 1,2,3,4,5,6
+
+        // let arr = [1, 0, false];
+
+        // console.log(arr.indexOf(0)); // 1
+        // console.log(arr.indexOf(false)); // 2
+        // console.log(arr.indexOf(null)); // -1
+
+        // console.log(arr.includes(1)); // true
+
+
+        let arr = [1, 2, 3, 4, 5];
+
+        let result = arr.reduce((sum, current) => {
+            console.log("sum", sum);
+            console.log("current", current);
+            return sum + current, 0
+        });
+
+        console.log(result); // 15
+    </script>
+
+    <h2><a class="main__anchor" name="summary" href="#summary">Summary</a></h2>
+    <p>A cheat sheet of array methods:</p>
+    <ul>
+        <li>
+            <p>To add/remove elements:</p>
+            <ul>
+                <li><code>push(...items)</code> – adds items to the end,</li>
+                <li><code>pop()</code> – extracts an item from the end,</li>
+                <li><code>shift()</code> – extracts an item from the beginning,</li>
+                <li><code>unshift(...items)</code> – adds items to the beginning.</li>
+                <li><code>splice(pos, deleteCount, ...items)</code> – at index <code>pos</code> deletes
+                    <code>deleteCount</code> elements and inserts <code>items</code>.</li>
+                <li><code>slice(start, end)</code> – creates a new array, copies elements from index <code>start</code>
+                    till <code>end</code> (not inclusive) into it.</li>
+                <li><code>concat(...items)</code> – returns a new array: copies all members of the current one and adds
+                    <code>items</code> to it. If any of <code>items</code> is an array, then its elements are taken.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>To search among elements:</p>
+            <ul>
+                <li><code>indexOf/lastIndexOf(item, pos)</code> – look for <code>item</code> starting from position
+                    <code>pos</code>, return the index or <code>-1</code> if not found.</li>
+                <li><code>includes(value)</code> – returns <code>true</code> if the array has <code>value</code>,
+                    otherwise <code>false</code>.</li>
+                <li><code>find/filter(func)</code> – filter elements through the function, return first/all values that
+                    make it return <code>true</code>.</li>
+                <li><code>findIndex</code> is like <code>find</code>, but returns the index instead of a value.</li>
+            </ul>
+        </li>
+        <li>
+            <p>To iterate over elements:</p>
+            <ul>
+                <li><code>forEach(func)</code> – calls <code>func</code> for every element, does not return anything.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>To transform the array:</p>
+            <ul>
+                <li><code>map(func)</code> – creates a new array from results of calling <code>func</code> for every
+                    element.</li>
+                <li><code>sort(func)</code> – sorts the array in-place, then returns it.</li>
+                <li><code>reverse()</code> – reverses the array in-place, then returns it.</li>
+                <li><code>split/join</code> – convert a string to array and back.</li>
+                <li><code>reduce/reduceRight(func, initial)</code> – calculate a single value over the array by calling
+                    <code>func</code> for each element and passing an intermediate result between the calls.</li>
+            </ul>
+        </li>
+        <li>
+            <p>Additionally:</p>
+            <ul>
+                <li><code>Array.isArray(value)</code> checks <code>value</code> for being an array, if so returns
+                    <code>true</code>, otherwise <code>false</code>.</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

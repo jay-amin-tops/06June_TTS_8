@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="inp-name" class="inp-class" id="inp-id">
+    <!-- <input type="text" name="inp-name" class="inp-class" id="inp-id">
+    <input type="text" name="inp-name" class="inp-class" id="inp-id">
+    <input type="text" name="inp-name" class="inp-class" id="inp-id">
+    <input type="text" name="inp-name" class="inp-class" id="inp-id"> -->
+    <input type="button" onclick="getData()" value="Click" name="btn" class="btn" id="btn">
+
+    <script>
+        function getData() {
+            // console.log("called");
+            // let inp = document.getElementById("inp-id")
+            // console.log(inp);
+            // console.log(inp.type);
+            // console.log(inp.value);
+            // let inp = document.getElementById("inp-id").value
+            // console.log(inp);
+
+            // HTMLCollection : item, length, namedItem
+            // let inp = document.getElementsByClassName("inp-class")
+            // console.log(inp);
+            // console.log(inp[0]);
+            // console.log(inp[0].value);
+            
+            // NodeList :  entries, forEach, item, keys, length,values
+            // let inp = document.getElementsByName("inp-name")
+            // console.log(inp);
+            // console.log(inp[0]);
+            // console.log(inp[0].value);
+            
+            
+            // // HTMLCollection : item, length, namedItem
+            // let inp = document.getElementsByTagName("input")
+            // console.log(inp);
+            // console.log(inp[0]);
+            // console.log(inp[0].value);
+
+
+            // let inp = document.querySelector(".inp-class")
+            // console.log(inp);
+            // console.log(inp.value);
+            let inp = document.querySelectorAll(".inp-class")
+            console.log(inp);
+            console.log(inp[0]);
+            console.log(inp[0].value);
+        }
+    </script>
+</body>
+</html>

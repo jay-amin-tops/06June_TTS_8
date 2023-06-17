@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>CLASS is an example of Encapsulation</p>
+    <p>CLASS is collection of DataMember and Member functions only</p>
+    <p>we can define class using class keyword</p>
+    <p>Without instance of class we cant access the properties of that class</p>
+    <p>instance means we needs to craete an object of that class </p>
+    <p>we can craete an object by new keyword</p>
+    
+    <script>
+        // class ClassOfJigar{
+        //     function insert() {
+                
+        //     }
+        // }
+        class ClassOfJigar{
+            addition(...a) {
+                console.log("called");
+                let result = 0
+                a.forEach(data => {
+                    result+=data
+                });
+                console.log("called addition : ",result);
+            }
+            subtraction(f,...a) {
+                let result = 0
+                // console.log(a);
+                a.push(f)
+                // console.log("array id ",a);
+                a.forEach((data,i) => {
+                    // console.log("data, ",data);
+                    // console.log(indexOf a);
+                    // console.log(Object.keys(a));
+                     console.log("...a.keys() ",...a.keys());
+                    const denseKeys = [...a.keys()];
+                    // console.log(denseKeys[0]);
+                    // console.log("itteration of i",i);
+                    // if (denseKeys[0]==0) {
+                    if (denseKeys[0]==i) {
+                    // if (a[0]==) {
+                        result=data
+                        console.log("result if: ",result);
+                    }else{
+                        // console.log("called else");
+                        result-=data
+                        
+                        console.log("result else: ",result);
+                    }
+                    // console.log(result);
+                });
+                // console.log(f);
+                // console.log("result",result);
+                // let output =f-a[0]-a[1]
+                // let output =f-result
+                console.log("called subtraction : ",result);
+            }
+        }
+
+        // addition()
+        
+        let ObjOfMyClass = new ClassOfJigar
+        ObjOfMyClass.addition(50,90)
+        // ObjOfMyClass.subtraction(910,50,50)
+        ObjOfMyClass.subtraction(910,50,50,80,90)
+        
+    </script>
+</body>
+</html>

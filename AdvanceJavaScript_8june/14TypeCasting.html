@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>The three most widely used type conversions are to string, to number, and to boolean.</p> 
+
+    <p>String Conversion - Occurs when we output something. Can be performed with String(value). The conversion to string is usually obvious for primitive values.</p> 
+    
+    <p>Numeric Conversion - Occurs in math operations. Can be performed with Number(value).</p> 
+    
+    <p>The conversion follows the rules:</p> 
+    <input type="text" name="val1" id="val1">
+    <input type="text" name="val2" id="val2">
+    <!-- <input onclick="clickHandle()" type="button" name="btn" id="btn"> -->
+    <input type="button" value="Add" name="btn" id="btn">
+    <script>
+       document.getElementById("btn").addEventListener("click",function () {
+            // console.log("called");
+            let val1 = document.getElementById("val1")
+            let val2 = document.getElementById("val2")
+            console.log(val1);
+            console.log(val1+val2);
+            console.log(val1.value*val2.value);
+            console.log(parseFloat(val1.value) +parseInt(val2.value));
+        })
+    </script>
+    <table>
+        <thead>
+            <tr>
+                <th>Value</th>
+                <th>Becomes…</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>undefined</code></td>
+                <td><code>NaN</code></td>
+            </tr>
+            <tr>
+                <td><code>null</code></td>
+                <td><code>0</code></td>
+            </tr>
+            <tr>
+                <td><code>true&nbsp;/&nbsp;false</code></td>
+                <td><code>1 / 0</code></td>
+            </tr>
+            <tr>
+                <td><code>string</code></td>
+                <td>The string is read “as is”, whitespaces (includes spaces, tabs <code>\t</code>, newlines
+                    <code>\n</code> etc.) from both sides are ignored. An empty string becomes <code>0</code>. An error
+                    gives <code>NaN</code>.</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // let value = true;
+        // alert(typeof value); // boolean
+
+        // value = String(value); // now value is a string "true"
+        // alert(typeof value); // string
+
+        // a = "50"
+        // parseFloat(a)
+        // parseInt(a)
+    </script>
+</body>
+
+</html>

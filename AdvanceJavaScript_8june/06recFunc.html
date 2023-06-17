@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var abc = prompt("Enter Data")
+        console.log("User Entered",abc);
+        console.log(typeof abc);
+        
+        console.log("parseFloat",typeof parseFloat(abc));
+        // console.log("parseFloat", typeof abc);
+        parseInt(abc)
+        console.log("parseInt", typeof parseInt(abc));
+        function factori(n) {
+            if (n === 0 || n===1) {
+                console.log(n);
+                return 1
+            } else {
+                console.log("inside else",n);
+                return n*factori(n-1)
+            }
+        }
+        console.log(factori(5));
+        
+    </script>
+</body>
+</html>

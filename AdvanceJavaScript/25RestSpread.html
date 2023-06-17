@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Rest Vs Spread</h2>
+    <h2>...</h2>
+
+    <script>
+        // function addition(a,d) {
+        //     return a+d
+        // }
+        // console.log(addition(50,80)); 
+        // console.log(addition(50,840));
+        // console.log(addition(580,840));
+        // Exmpale of Rest [recieve multiple arguments in single parameter] START
+        function addition(a,...data) {
+            console.log(" value of a is ", a);
+            console.log(" value of data is ", data);
+            otherdata = 0
+            data.forEach(val => {
+                console.log(val);
+                otherdata += val
+            });
+            console.log("otherdata ", otherdata);
+            return a + otherdata
+        }
+
+        arr = [540, 90, 80, 960, 90]
+        arr = [540, 90, 80, 960]
+        arr = [540, 90, 80, 960, 90, 898, 45]
+        console.log(addition(50, 80));
+        console.log(addition(50, 840));
+        console.log(addition(580, 840, 78, 45));
+
+        // Exmpale of Rest [recieve multiple arguments in single parameter] END
+
+
+
+        // Exmpale of Spread [sending multiple arguments in diff parameter respectivly] START
+        function userDetails(username, email, gender) {
+            console.log(username, email, gender);
+        }
+
+        // userDetails("test","tops","male")
+        arrayOfUserDetails = ["test", "tops", "male"]
+        arrayOfUserDetailsObj = {"a":"test", "b":"tops", "c":"male"} //Spread syntax requires ...iterable[Symbol.iterator] to be a function
+        console.log( Object.entries(arrayOfUserDetailsObj) );
+        userDetails(...arrayOfUserDetails)
+        userDetails(...Object.entries(arrayOfUserDetailsObj))
+       // Exmpale of Spread [sending multiple arguments in diff parameter respectivly] START
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="username" class="cust-class" id="inp-id">
+    <input type="text" name="password" class="cust-class" id="pass">
+    <input type="text" name="email" class="cust-class" id="email">
+    <input type="button" value="Click" onclick="getdata()" name="btn" class="btn" id="btn">
+    <script>
+        function getdata() {
+            // let uname = document.getElementById("inp-id")
+            // console.log(uname);
+            // console.log(uname.value);
+
+            // let uname = document.getElementsByClassName("cust-class") //HTMLCollection 
+            // console.log(uname);
+            // console.log(uname[0]);
+            // console.log(uname[0].value);
+
+
+            
+            // let uname = document.getElementsByTagName("input") //HTMLCollection
+            // console.log(uname);
+            // console.log(uname[0]);
+            // console.log(uname[0].value);
+
+            // let uname = document.getElementsByName("username") //NodeList [input#inp-id.cust-class]0: input#inp-id.cust-classlength: 1[[Prototype]]: NodeList
+            // console.log(uname);
+            // console.log(uname[0]);
+            // console.log(uname[0].value);
+
+            // let uname = document.querySelector(".cust-class")
+            // // let uname = document.querySelector("#inp-id")
+            // // let uname = document.querySelector("input")
+            // console.log(uname);
+            // console.log(uname.value);
+
+            let uname = document.querySelectorAll(".cust-class")
+            // let uname = document.querySelector("#inp-id")
+            // let uname = document.querySelector("input")
+            console.log(uname);
+            console.log(uname[0].value);
+            console.log(uname[1].value);
+            console.log(uname[2].value);
+        }
+        function addition() {
+            a = 50
+            b = 50
+            // return "kaipan"
+            return a+b
+            // console.log("called");
+        }
+        console.log(addition());
+    </script>
+</body>
+
+</html>

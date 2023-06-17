@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>The user selects, clicks, or hovers the cursor over a certain element.</li>
+        <li>The user chooses a key on the keyboard.</li>
+        <li>The user resizes or closes the browser window.</li>
+        <li>A web page finishes loading.</li>
+        <li>A form is submitted.</li>
+        <li>A video is played, paused, or ends.</li>
+        <li>An error occurs.</li>
+    </ul>
+    <h2>Mouse events</h2>
+    <table border="1" align="center" class="alt">
+        <tbody>
+            <tr>
+                <th>Event Performed</th>
+                <th>Event Handler</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>onclick</td>
+                <td>When mouse click on an element</td>
+            </tr>
+            <tr>
+                <td>mouseover</td>
+                <td>onmouseover</td>
+                <td>When the cursor of the mouse comes over the element</td>
+            </tr>
+            <tr>
+                <td>mouseout</td>
+                <td>onmouseout</td>
+                <td>When the cursor of the mouse leaves an element</td>
+            </tr>
+            <tr>
+                <td>mousedown</td>
+                <td>onmousedown</td>
+                <td>When the mouse button is pressed over the element</td>
+            </tr>
+            <tr>
+                <td>mouseup</td>
+                <td>onmouseup</td>
+                <td>When the mouse button is released over the element</td>
+            </tr>
+            <tr>
+                <td>mousemove</td>
+                <td>onmousemove</td>
+                <td>When the mouse movement takes place.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>Keyboard events</h2>
+    <table border="1" align="center" class="alt">
+        <tbody>
+            <tr>
+                <th>Event Performed</th>
+                <th>Event Handler</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Keydown &amp; Keyup</td>
+                <td>onkeydown &amp; onkeyup</td>
+                <td>When the user press and then release the key</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>Form events</h2>
+    <table border="1" align="center" class="alt">
+        <tbody>
+            <tr>
+                <th>Event Performed</th>
+                <th>Event Handler</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>focus</td>
+                <td>onfocus</td>
+                <td>When the user focuses on an element</td>
+            </tr>
+            <tr>
+                <td>submit</td>
+                <td>onsubmit</td>
+                <td>When the user submits the form</td>
+            </tr>
+            <tr>
+                <td>blur</td>
+                <td>onblur</td>
+                <td>When the focus is away from a form element</td>
+            </tr>
+            <tr>
+                <td>change</td>
+                <td>onchange</td>
+                <td>When the user modifies or changes the value of a form element</td>
+            </tr>
+        </tbody>
+    </table>
+    <select onchange="changedOpt(this)" name="" id="">
+        <option value="1">Ahmedabad</option>
+        <option value="2">baroda</option>
+    </select>
+    <!-- <input type="text" onkeydown="getdatainp(this)" name="" id=""> -->
+    <!-- <input type="text" onkeypress="getdatainp(this)" name="" id=""> -->
+    <input type="text" onkeyup="getdatainp(this)" name="" id="">
+    <input type="text" placeholder="onblur" onblur="checkreq(this)" name="" id="">
+    <input type="text" placeholder="onfocus" onfocus="checkreq(this)" name="" id="">
+    
+    <form method="post"  onsubmit="submitformdata(this)">
+        <input type="text" name="usernamedata" id="usernamedata">
+        <input type="submit" name="btn" id="btn">
+    </form>
+    <script>
+        function submitformdata() {
+            event.preventDefault()
+            console.log("called");
+            // console.log("this inside submit function : ",this);
+        }
+        function changedOpt(e) {
+            console.log(e);
+            console.log(e.value);
+        }
+        function getdatainp(e) {
+            console.log(e);
+            console.log(e.value);
+        }
+        function checkreq(e) {
+            console.log("called Focus or blur");
+        }
+    </script>
+</body>
+
+</html>

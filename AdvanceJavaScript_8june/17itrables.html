@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        Objects that can be used in for..of are called iterable.
+
+        Technically, iterables must implement the method named Symbol.iterator.
+        The result of obj[Symbol.iterator]() is called an iterator. It handles further iteration process.
+        An iterator must have the method named next() that returns an object {done: Boolean, value: any}, here done:true denotes the end of the iteration process, otherwise the value is the next value.
+        The Symbol.iterator method is called automatically by for..of, but we also can do it directly.
+        Built-in iterables like strings or arrays, also implement Symbol.iterator.
+        String iterator knows about surrogate pairs.
+        Objects that have indexed properties and length are called array-like. Such objects may also have other properties and methods, but lack the built-in methods of arrays.
+
+        If we look inside the specification - we'll see that most built-in methods assume that they work with iterables or array-likes instead of "real" arrays, because that's more abstract.
+
+        Array.from(obj[, mapFn, thisArg]) makes a real Array from an iterable or array-like obj, and we can then use array methods on it. The optional arguments mapFn and thisArg allow us to apply a function to each item.
+    </pre>
+    <script>
+        let range = {
+            from: 1,
+            to: 5
+        };
+        data = [1, 2, 3];
+        // We want the for..of to work:
+        for (let num of data) {
+            console.log(num);
+            num = 1, 2, 3, 4, 5
+        }
+
+        console.log(range);
+        range[Symbol.iterator] = function () {
+            // return {
+            //     current: this.from,
+            //     last: this.to,
+            // next(){
+            //     console.log("called");
+            // }
+            // }
+            return {
+                current: this.from,
+                last: this.to,
+                next() {
+                    if (this.current <= this.last) {
+                        return { done: false, value: this.current++ };
+                    } else {
+                        return { done: true };
+                    }
+                    console.log("called");
+                }
+            };
+
+        }
+
+        for (let num of range) {
+            alert(num); // 1, then 2, 3, 4, 5
+        }
+
+        for (let char of "test") {
+            // triggers 4 times: once for each character
+            alert(char); // t, then e, then s, then t
+        }
+
+        let str = "Hello";
+
+        // does the same as
+        // for (let char of str) alert(char);
+
+        let iterator = str[Symbol.iterator]();
+
+        while (true) {
+            let result = iterator.next();
+            if (result.done) break;
+            alert(result.value); // outputs characters one by one
+        }
+    </script>
+</body>
+
+</html>
