@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class AccessModi {
+            #privateExample = "test"
+            DataMember = "test"
+            accessModiSelf(){
+                console.log("Called",this.#privateExample);
+            }
+        }
+        class OtherClass extends AccessModi{
+            accessModiChild(){
+                console.log("Called",this.DataMember);
+                // console.log("Called",this.#privateExample); //Private field '#privateExample' must be declared in an enclosing class
+            }
+        }
+        let accessObject = new OtherClass;
+        accessObject.accessModiChild()
+    </script>
+</body>
+
+</html>

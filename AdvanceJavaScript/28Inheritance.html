@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="different-types-of-inheritance.png" alt="">
+    <script>
+        // parent class START
+        class MathOp{
+            addition(...a) {
+                console.log(a);
+                let result = 0
+                a.forEach(data => {
+                    result+=data
+                });
+                return result
+            }
+        }
+        // parent class END
+
+        // Inheritnace means access the parent class properties into child
+
+        // Child class START
+        class AdvMath extends MathOp{
+            AverageOfNumbers(a,b){
+                let arr = [a,b]
+                // let AdditionRes = this.addition(a,b)
+                let AdditionRes = this.addition(...arr)
+                console.log(AdditionRes);
+            }
+        }
+        // Child class END
+
+
+        // class OtherClass extends AdvMath,MathOp{ }
+        // class OtherClass extends AdvMath extends MathOp{ }
+
+        let ObjOfMyClass = new AdvMath
+        ObjOfMyClass.AverageOfNumbers(50,90)
+        // ObjOfMyClass.subtraction(910,50,50)
+        // ObjOfMyClass.subtraction(910,50,50,80,90)
+        
+    </script>
+</body>
+</html>

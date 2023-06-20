@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>constructor is a method which is invoked by default when objects are created</p>
+    <p>constructor never return</p>
+    <p>constructor used for init some value for class</p>
+    <script>
+        // class ExampleOfCass {
+        //     constructor() {
+        //         console.log("constructor");
+        //     }
+        //     ExampleOfCass() {
+        //         console.log("ExampleOfCass");
+        //     }
+        //     test() {
+        //         console.log("called");
+        //     }
+        // }
+        class Books {
+            author =""
+            constructor(name) {
+                this.author = name;
+                console.log("constructor");
+            }
+            twoStatesss() {
+                console.log("ExampleOfCass",this.author);
+            }
+            thereeIdiots() {
+                console.log("called",this.author);
+            }
+        }
+
+        let Ob = new Books("Chetan Bhagat");
+        // Ob.test()
+        Ob.twoStatesss()
+    </script>
+
+</body>
+
+</html>

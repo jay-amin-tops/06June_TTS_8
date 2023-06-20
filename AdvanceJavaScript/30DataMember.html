@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>class is a collection of datamember and member functions only</p>
+    <p>datamember we can access entire the class (variable that have scope of class)</p>
+    <script>
+        class AccessModi {
+            // privateExample = "test"
+            // ParentMethod1(){
+            //     console.log("ParentMethod1 ",this.privateExample);
+            // }
+            // ParentMethod2(){
+            //     console.log("ParentMethod2 ",this.privateExample);
+            // }
+            Author = "Chetan Bhagat"
+            TwoStates(){
+                let abc = "anthing"
+                console.log("storty of TwoStates  and written by",this.Author);
+            }
+            threeIdiots(){
+                // console.log(this.abc);
+                console.log("storty of threeIdiots and written by",this.Author);
+            }
+        }
+        let accessObject = new AccessModi;
+        accessObject.TwoStates()
+        accessObject.threeIdiots()
+    </script>
+</body>
+
+</html>
