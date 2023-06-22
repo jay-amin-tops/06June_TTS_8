@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>polymorphism</h2>
+    <p>The polymorphism is a core concept of an object-oriented paradigm that provides a way to perform a single action in different forms. It provides an ability to call the same method on different JavaScript objects.</p>
+    <script>
+        var a = 5
+        a = 15
+        a = 55
+        a = 5
+
+        class MathOp{
+            SumForTwo(){
+                console.log("MathOp SumForTwo without arg");
+            } 
+            SumForTwo(a){
+                console.log("MathOp SumForTwo with arg",a);
+            } 
+            SumForTwo(val1,val2){
+                console.log("MathOp SumForTwo with tow arg",val1,val2);
+            } 
+        }
+        class AdvMathOp extends MathOp{
+            SumForTwo(){
+                console.log("AdvMathOp SumForTwo");
+            } 
+        }
+        // let Ob = new MathOp
+        let Ob = new AdvMathOp
+        Ob.SumForTwo(); // if we called this without any para init AdvMathOp SumForTwo
+        Ob.SumForTwo(50); // if we called this without any para init AdvMathOp SumForTwo
+        Ob.SumForTwo(50,100); // if we called this without any para init AdvMathOp SumForTwo
+
+
+        // dispData = ""
+        // fetch("urlserversidedata")
+        // {
+        //     dispData = "abc"
+        // }
+        // dispData
+    </script>
+
+</body>
+</html>

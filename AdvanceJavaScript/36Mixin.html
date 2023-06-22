@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>In JavaScript we can only inherit from a single object. There can be only one [[Prototype]] for an object. And a class may extend only one other class.</p>
+    <script>
+        let sayHiMixin = {
+            sayHi(){
+                console.log("hii",this.name);
+                return "anything"
+            },
+            sayBye(){
+                console.log("bye");
+            }
+        }
+        class User{
+            constructor(name){
+                this.name = name
+            }
+            // sayHi(){
+            //     console.log("hii",this.name);
+            //     return "anything"
+            // }
+            // sayBye(){
+            //     console.log("bye");
+            // }
+        }
+        // console.log(sayHiMixin);
+        // console.log(sayHiMixin.sayHi);
+        Object.assign(User.prototype,sayHiMixin)
+        console.log(sayHiMixin.sayHi());
+        new User("Dude").sayHi()
+    </script>
+</body>
+</html>

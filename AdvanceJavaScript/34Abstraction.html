@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Abstraction in computer programming is a way to reduce complexity and allow efficient design and implementation
+        in complex software systems. It hides the technical complexity of systems behind simpler APIs.</p>
+    <h2>Advantages of Data Abstraction</h2>
+    <ul>
+        <li>Helps the user to avoid writing low-level code.</li>
+        <li>Avoids code duplication and increases reusability.</li>
+        <li>Can change the internal implementation of a class independently without affecting the user.</li>
+        <li>Helps to increase the security of an application or program as only important details are provided to the
+            user.</li>
+    </ul>
+    <script>
+class Abs{
+    set(x){
+        this.a = x+1
+    }
+    newbank(){
+        // this.a = inter
+        console.log("take charge : ",this.a);
+    }
+}
+let ObjectOfAbs = new Abs
+ObjectOfAbs.set(2)
+ObjectOfAbs.newbank(2)
+
+// Object.entries
+    </script>
+</body>
+
+</html>
