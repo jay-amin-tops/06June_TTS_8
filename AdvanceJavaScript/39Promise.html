@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        The Promise object represents the eventual completion (or failure) of an asynchronous operation and its
+        resulting value.
+    </p>
+    <p>
+        To learn about the way promises work and how you can use them, we advise you to read Using promises first.
+    </p>
+    <ul>
+        <li><em>pending</em>: initial state, neither fulfilled nor rejected.</li>
+        <li><em>fulfilled</em>: meaning that the operation was completed successfully.</li>
+        <li><em>rejected</em>: meaning that the operation failed.</li>
+    </ul>
+    <script>
+        myPromise = new Promise((resolve,rejected)=>{
+            let marks = 60
+            if (marks > 50) {
+                setTimeout(() => {
+                    resolve("resolved")
+                }, 2000);
+            } else {
+                setTimeout(() => {
+                    rejected("rejected")
+                }, 2000);
+            }
+        })
+        console.log(myPromise);
+        myPromise.then((res)=>{
+            console.log(res);
+        }).catch((res)=>{
+            console.log(res);
+        })
+
+        // fetch("serverURL").then("json conversion").then("server res")
+    </script>
+</body>
+
+</html>

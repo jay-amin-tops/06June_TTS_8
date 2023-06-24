@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>callback hell</h2>
+    <script>
+        function MakeCard(prod,function () {
+            api.cardprocceds(cartdata,function () {
+                api.maypayment(paymentdata,function () {
+                    api.shipping(shippingdata,function () {
+                        api.reciepts()
+                    })
+                })
+            })
+        }) 
+        MakeCard()
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="usernamelist">
+        
+    </ul>
+    <script>
+        // fetch("https://jayramin.000webhostapp.com/allusers").then((res)=>{ console.log(res); })
+        // fetch("https://jayramin.000webhostapp.com/allusers").then((res)=>{ return res.json() })
+        fetch("https://jayramin.000webhostapp.com/allusers").then((res)=>res.json()).then((ResponseData)=>{
+            // console.log(ResponseData);
+            // console.log(ResponseData.Data);
+            PrintHTML = ""
+            ResponseData.Data.forEach(element => {
+                console.log(element.username);
+                PrintHTML+=`<li>${element.username}</li>`
+            });
+            document.getElementById("usernamelist").innerHTML = PrintHTML
+        })
+    </script>
+
+</body>
+</html>

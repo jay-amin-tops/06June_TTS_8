@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>A callback function is a function passed into another function as an argument, which is then invoked inside the
+        outer function to complete some kind of routine or action.</p>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        // function cardProcceds(params) {
+        //     console.log("called card procedss");
+        //     payment()
+        // }
+        // function payment(params) {
+        //     console.log("payment function called");
+        // }
+
+        // cardProcceds()
+
+        // let variablelet = "variablelet"
+        // var variablevar = "variablevar"
+        // const container = "container"
+        // function variableaccess(params) {
+        //     let abc = "abc"
+        //     var xyz = "xyz"
+        //     const pqr = "pqr"
+        //     console.log(container);
+        //     console.log(variablevar);
+        //     console.log(variablelet);
+        // }
+        // console.log(abc);
+        // console.log(xyz);
+        // console.log(variablelet);
+
+        // function anotherfunction(clbk) {
+        //     console.log("My testing function");
+        //     // clbk()
+        //     const name = "testing"
+        //     setTimeout(() => {
+        //         clbk(name)
+        //     }, 2000);
+        // }
+        // function NewFunctionAsCallBack(nm) {
+        //     console.log("callback function called",nm);
+
+        // }
+        // anotherfunction(NewFunctionAsCallBack)
+
+        // function CardPayment(clbk) {
+        //     console.log("My testing function");
+        //     // clbk()
+        //     const Amount = 50000
+        //     setTimeout(() => {
+        //         clbk(Amount)
+        //     }, 2000);
+        // }
+        // function PlacedOrderSummury(nm) {
+        //     console.log("Payment recipts", nm);
+
+        // }
+        // CardPayment(PlacedOrderSummury)
+
+        // Data = null
+
+        // $.ajax({
+        //     url:"serverurl",
+        //     data:"",
+        //     method:"post",
+        //     success:function (response) {
+        // console.log(response);
+        // Data = response
+        //     }
+        // })
+        // Data // not accessible
+
+        var return_first;
+        function callback(response) {
+            return_first = response;
+            console.log("inside callback",return_first);
+            //use return_first variable here
+        }
+
+        $.ajax({
+            url: "https://jayramin.000webhostapp.com/allusers",
+            success: function (data) {
+                // console.log(data);
+                callback(data);
+            },
+        });
+    </script>
+
+</body>
+
+</html>
