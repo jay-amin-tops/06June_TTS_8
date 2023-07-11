@@ -7,6 +7,7 @@ class ClassComponentMenu extends Component {
             <div>
                 <ol>
                     <li><Link to="classintro">Introdcution of ClassComoenent</Link></li>
+                    <li><Link to="stateinclass">State in Class Compo</Link></li>
                 </ol>
                 
                 <Outlet></Outlet>
