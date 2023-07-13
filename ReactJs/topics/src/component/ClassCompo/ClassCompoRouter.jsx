@@ -3,6 +3,8 @@ import ClassComponentMenu from './ClassComponentMenu.jsx';
 import { Route, Routes, createHashRouter } from 'react-router-dom';
 import IntroOfClassCompo from './01IntroOfClassCompo.jsx';
 import StateInClassCompo from './02StateInClassCompo.jsx';
+import PropsInClassCompo from './03PropsInClassCompo.jsx';
+import StateLifeCycleInClassCompo from './05StateLifeCycleInClassCompo.jsx';
 
 class ClassCompoRouter extends Component {
     render() {
@@ -11,6 +13,8 @@ class ClassCompoRouter extends Component {
                 <Route path="/" element={<ClassComponentMenu />}>
                     <Route path="classintro" element={<IntroOfClassCompo/>}  />
                     <Route path="stateinclass" element={<StateInClassCompo/>}  />
+                    <Route path="propsinclass" element={<PropsInClassCompo/>}  />
+                    <Route path="lifecycleinclass" element={<StateLifeCycleInClassCompo/>}  />
                     <Route path="b" lazy="b"/>
                     {/* <Route path="a" lazy={() => import("./a")} />
                     <Route path="b" lazy={() => import("./b")} /> */}

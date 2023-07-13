@@ -8,6 +8,8 @@ class ClassComponentMenu extends Component {
                 <ol>
                     <li><Link to="classintro">Introdcution of ClassComoenent</Link></li>
                     <li><Link to="stateinclass">State in Class Compo</Link></li>
+                    <li><Link to="propsinclass">Props in Class Compo</Link></li>
+                    <li><Link to="lifecycleinclass">LifeCycle in Class Compo</Link></li>
                 </ol>
                 
                 <Outlet></Outlet>

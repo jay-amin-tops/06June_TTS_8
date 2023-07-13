@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class StateInClassCompo extends Component {
-    constructor(props) {
-        super(props);
-        this.clickHandleCustom=this.clickHandleCustom.bind(this)
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.clickHandleCustom=this.clickHandleCustom.bind(this)
+    // }
     
     state = {
         name: 'Taylor',
@@ -22,8 +22,11 @@ class StateInClassCompo extends Component {
         this.uname="test" 
     }
     render() {
+        let username = "test"
         return (
             <>
+            <h2>State in Class Compo</h2>
+            <p>State is</p>
                 User Name is {this.uname}
                 {this.state.name}
 
